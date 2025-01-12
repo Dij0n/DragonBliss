@@ -1,0 +1,9 @@
+name: DragonBliss
+version: '1.0'
+main: dijon.dragonBliss.DragonBliss
+api-version: '1.20'
+commands:
+  debug:
+    usage: /debug
+  info:
+    usage: /info
