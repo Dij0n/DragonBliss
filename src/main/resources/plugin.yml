@@ -7,3 +7,5 @@ commands:
     usage: /debug
   info:
     usage: /info
+  shop:
+    usage: /shop

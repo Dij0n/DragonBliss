@@ -3,10 +3,8 @@ package dijon.dragonBliss.data.teams;
 import dijon.dragonBliss.data.players.PlayerDataManager;
 import org.bukkit.entity.Player;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class TeamManager {
 
@@ -57,6 +55,17 @@ public class TeamManager {
             total += PlayerDataManager.getBalance(uuid);
         }
         return total;
+    }
+
+    public static List<BlissTeam> getSortedTeamList(){
+        if (teamList.isEmpty()) {
+            return Collections.emptyList();
+        }
+
+        return teamList.values()
+                .stream()
+                .sorted((team1, team2) -> Integer.compare(getTotalTeamValue(team2), getTotalTeamValue(team1)))
+                .collect(Collectors.toList());
     }
 
 

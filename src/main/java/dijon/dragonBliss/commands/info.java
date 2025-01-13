@@ -29,10 +29,10 @@ public class info implements CommandExecutor {
             c1 = c11.append(c12b);
         }
 
-        Component c21 = Component.text("ʙᴀʟᴀɴᴄᴇ: ").color(TextColor.color(0xffffff));
-        Component c22 = Component.text("$" + PlayerDataManager.getBalance(player.getUniqueId())).color(TextColor.color(0xFFFF00));
-
-        Component c2 = c21.append(c22);
+//        Component c21 = Component.text("ʙᴀʟᴀɴᴄᴇ: ").color(TextColor.color(0xffffff));
+//        Component c22 = Component.text("$" + PlayerDataManager.getBalance(player.getUniqueId())).color(TextColor.color(0xFFFF00));
+//
+//        Component c2 = c21.append(c22);
 
         Component c31 = Component.text("ᴛᴇᴀᴍ ʙᴀʟᴀɴᴄᴇ: ").color(TextColor.color(0xffffff));
         Component c32 = Component.text("$" + TeamManager.getTotalTeamValue(TeamManager.getTeamOfPlayer(player))).color(TextColor.color(0xFFFF00));
@@ -40,7 +40,7 @@ public class info implements CommandExecutor {
         Component c3 = c31.append(c32);
 
         player.sendMessage(c1);
-        player.sendMessage(c2);
+//        player.sendMessage(c2);
         player.sendMessage(c3);
         return true;
 
