@@ -17,3 +17,5 @@ commands:
     usage: /finale
   reseteverything:
     usage: /reseteverything
+  setactiveborder:
+    usage: /setactiveborder

@@ -8,6 +8,7 @@ import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.block.data.type.PointedDripstone;
+import org.bukkit.entity.Display;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.TextDisplay;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 public class PedastalManager {
 
     public static TextDisplay podium;
-    public static Location podiumLoc = new Location(Bukkit.getWorld("world"), -706, 73, -441);
+    public static Location podiumLoc = new Location(Bukkit.getWorld("world"), -500, 135, 110);
 
 
     public static void initialize(){
@@ -28,6 +29,7 @@ public class PedastalManager {
         }
         podium = (TextDisplay) podiumLoc.getWorld().spawnEntity(podiumLoc, EntityType.TEXT_DISPLAY);
         podium.setAlignment(TextDisplay.TextAlignment.LEFT);
+        podium.setBillboard(Display.Billboard.CENTER);
     }
 
     public static void setPodiumText(){

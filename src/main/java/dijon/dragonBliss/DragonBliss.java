@@ -49,6 +49,7 @@ public final class DragonBliss extends JavaPlugin {
         this.getCommand("bloodmoon").setExecutor(new bloodmoon());
         this.getCommand("finale").setExecutor(new finale());
         this.getCommand("reseteverything").setExecutor(new reseteverything());
+        this.getCommand("setactiveborder").setExecutor(new reseteverything());
 
         new ActivePlayerRunnable().runTaskTimer(this, 0, 5);
         new CompassRunnable().runTaskTimer(this, 0, 20);
