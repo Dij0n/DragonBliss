@@ -13,6 +13,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
+import java.util.Arrays;
+import java.util.Set;
+import java.util.UUID;
+
 public class KillListener implements Listener {
 
     public KillListener() {
@@ -32,8 +36,16 @@ public class KillListener implements Listener {
         if(!(PlayerDataManager.isActive(killer.getUniqueId()) && PlayerDataManager.isActive(player.getUniqueId()))) return; //Both have to be active for a transaction
         if(TeamManager.getTeamOfPlayer(player).getPlayers().contains(killer.getUniqueId())) return; //No team-kills
 
-
         PlayerDataManager.addBalance(killer.getUniqueId(), PlayerDataManager.getValue(player.getUniqueId()));
+
+        int pointsGainedByPlayer = PlayerDataManager.getBalance(player.getUniqueId());
+        Set<UUID> playersOnTeam = TeamManager.getActivePlayersOnTeam(TeamManager.getTeamOfPlayer(player));
+
+        if(playersOnTeam.isEmpty()){
+            PlayerDataManager.addBalance(killer.getUniqueId(), pointsGainedByPlayer);
+        }else{
+            TeamManager.addBalanceEvenlyAcrossTeam(TeamManager.getTeamOfPlayer(player), pointsGainedByPlayer);
+        }
 
         Component c = Component.text("\uD83D\uDDE1" + " You killed " + player.getName() + " and gained ").color(TextColor.color(0xFF3A36)).append(Component.text("$30!").color(TextColor.color(0xffff00)));
 
@@ -41,19 +53,19 @@ public class KillListener implements Listener {
         killer.playSound(killer.getLocation(), Sound.BLOCK_NOTE_BLOCK_BIT, 2F, 1.1F);
     }
 
-    @EventHandler
-    public void testKill(EntityDeathEvent e){
-
-        if(e.getEntity().getKiller() == null) return;
-
-        Player killer = e.getEntity().getKiller();
-
-        PlayerDataManager.addBalance(killer.getUniqueId(), 30);
-
-        Component c = Component.text("\uD83D\uDDE1" + " You killed " + e.getEntity().getType().name() + " and gained ").color(TextColor.color(0xFF3A36)).append(Component.text("$30!").color(TextColor.color(0xffff00)));
-
-        killer.sendMessage(c);
-        killer.playSound(killer.getLocation(), Sound.BLOCK_NOTE_BLOCK_BIT, 2F, 1.1F);
-    }
+//    @EventHandler
+//    public void testKill(EntityDeathEvent e){
+//
+//        if(e.getEntity().getKiller() == null) return;
+//
+//        Player killer = e.getEntity().getKiller();
+//
+//        PlayerDataManager.addBalance(killer.getUniqueId(), 30);
+//
+//        Component c = Component.text("\uD83D\uDDE1" + " You killed " + e.getEntity().getType().name() + " and gained ").color(TextColor.color(0xFF3A36)).append(Component.text("$30!").color(TextColor.color(0xffff00)));
+//
+//        killer.sendMessage(c);
+//        killer.playSound(killer.getLocation(), Sound.BLOCK_NOTE_BLOCK_BIT, 2F, 1.1F);
+//    }
 
 }

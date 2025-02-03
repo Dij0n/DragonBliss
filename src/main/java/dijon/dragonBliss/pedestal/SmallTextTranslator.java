@@ -34,17 +34,6 @@ public class SmallTextTranslator {
         smallTextMap.put("x", "х");
         smallTextMap.put("y", "ʏ");
         smallTextMap.put("z", "ᴢ");
-
-        smallTextMap.put("0", "𝟎");
-        smallTextMap.put("1", "𝟏");
-        smallTextMap.put("2", "𝟐");
-        smallTextMap.put("3", "𝟑");
-        smallTextMap.put("4", "𝟒");
-        smallTextMap.put("5", "𝟓");
-        smallTextMap.put("6", "𝟔");
-        smallTextMap.put("7", "𝟕");
-        smallTextMap.put("8", "𝟖");
-        smallTextMap.put("9", "𝟗");
     }
 
     public static String smallText(String string){

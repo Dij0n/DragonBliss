@@ -9,3 +9,11 @@ commands:
     usage: /info
   shop:
     usage: /shop
+  track:
+    usage: /track
+  bloodmoon:
+    usage: /bloodmoon
+  finale:
+    usage: /finale
+  reseteverything:
+    usage: /reseteverything

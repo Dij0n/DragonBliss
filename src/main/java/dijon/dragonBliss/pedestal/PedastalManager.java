@@ -22,7 +22,7 @@ public class PedastalManager {
 
 
     public static void initialize(){
-        for(TextDisplay textDisplay : podiumLoc.getNearbyEntitiesByType(TextDisplay.class, 1, 1, 1)){
+        for(TextDisplay textDisplay : podiumLoc.getNearbyEntitiesByType(TextDisplay.class, 3, 3, 3)){
             podium = textDisplay;
             return;
         }
