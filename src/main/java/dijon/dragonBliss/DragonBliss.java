@@ -11,7 +11,6 @@ import dijon.dragonBliss.data.players.JoinDataListener;
 import dijon.dragonBliss.data.players.PlayerFileManager;
 import dijon.dragonBliss.data.teams.TeamFileManager;
 import dijon.dragonBliss.data.teams.TeamManager;
-import dijon.dragonBliss.pedestal.PedastalManager;
 import dijon.dragonBliss.pedestal.SmallTextTranslator;
 import dijon.dragonBliss.shop.ShopItems;
 import dijon.dragonBliss.shop.ShopListener;
@@ -30,7 +29,6 @@ public final class DragonBliss extends JavaPlugin {
         TeamManager.initialize();
         PlayerFileManager.initialize();
         TeamFileManager.initialize();
-        PedastalManager.initialize();
         SmallTextTranslator.initialize();
         ShopItems.initialize();
         ShopManager.initialize();
@@ -51,7 +49,7 @@ public final class DragonBliss extends JavaPlugin {
         this.getCommand("reseteverything").setExecutor(new reseteverything());
         this.getCommand("setactiveborder").setExecutor(new reseteverything());
 
-        new ActivePlayerRunnable().runTaskTimer(this, 0, 5);
+        new ActivePlayerRunnable().runTaskTimer(this, 20, 5);
         new CompassRunnable().runTaskTimer(this, 0, 20);
         new BloodCompassRunnable().runTaskTimer(this, 0, 20);
 

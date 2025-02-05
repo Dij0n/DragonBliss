@@ -7,32 +7,23 @@ import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.block.data.type.PointedDripstone;
 import org.bukkit.entity.Display;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.TextDisplay;
-import org.bukkit.util.BoundingBox;
 
 import java.util.ArrayList;
 
-public class PedastalManager {
+public class PedestalManager {
 
     public static TextDisplay podium;
     public static Location podiumLoc = new Location(Bukkit.getWorld("world"), -500, 135, 110);
 
 
-    public static void initialize(){
-        for(TextDisplay textDisplay : podiumLoc.getNearbyEntitiesByType(TextDisplay.class, 3, 3, 3)){
-            podium = textDisplay;
-            return;
-        }
-        podium = (TextDisplay) podiumLoc.getWorld().spawnEntity(podiumLoc, EntityType.TEXT_DISPLAY);
-        podium.setAlignment(TextDisplay.TextAlignment.LEFT);
-        podium.setBillboard(Display.Billboard.CENTER);
-    }
-
     public static void setPodiumText(){
+
+        podium = getTextDisplay();
+
         ArrayList<Component> lines = new ArrayList<>();
         for(BlissTeam team : TeamManager.getSortedTeamList()){
             if(team.getName().equalsIgnoreCase("No_Team")) continue;
@@ -52,6 +43,18 @@ public class PedastalManager {
         }
 
         podium.text(fin);
+    }
+
+    private static TextDisplay getTextDisplay(){
+        for(Entity entity : podiumLoc.getNearbyEntities(3, 3, 3)){
+            if(entity instanceof TextDisplay textDisplay){
+                return textDisplay;
+            }
+        }
+        TextDisplay newOne =  (TextDisplay) podiumLoc.getWorld().spawnEntity(podiumLoc, EntityType.TEXT_DISPLAY);
+        newOne.setAlignment(TextDisplay.TextAlignment.LEFT);
+        newOne.setBillboard(Display.Billboard.CENTER);
+        return newOne;
     }
 
     private static String removeUnderscores(String string){
