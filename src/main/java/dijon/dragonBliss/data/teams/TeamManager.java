@@ -30,15 +30,15 @@ public class TeamManager {
         teamList.put(team.getName(), team);
     }
 
-    public static void addPlayer(Player player, String teamName){
+    public static void addPlayer(UUID uuid, String teamName){
         if(teamList.containsKey(teamName)){
-            teamList.get(teamName).addPlayer(player);
+            teamList.get(teamName).addPlayer(uuid);
         }
     }
 
-    public static void removePlayer(Player player, String teamName){
+    public static void removePlayer(UUID uuid, String teamName){
         if(teamList.containsKey(teamName)){
-            teamList.get(teamName).removePlayer(player);
+            teamList.get(teamName).removePlayer(uuid);
         }
     }
 

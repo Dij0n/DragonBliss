@@ -24,12 +24,12 @@ public class BlissTeam {
         this.color = color;
     }
 
-    public void addPlayer(Player player){
-        players.add(player.getUniqueId());
+    public void addPlayer(UUID uuid){
+        players.add(uuid);
     }
 
-    public void removePlayer(Player player){
-        players.remove(player.getUniqueId());
+    public void removePlayer(UUID uuid){
+        players.remove(uuid);
     }
 
     public String getName() {

@@ -27,8 +27,8 @@ public final class DragonBliss extends JavaPlugin {
     public void onEnable() {
         instance = this;
 
-        PlayerFileManager.initialize();
         TeamManager.initialize();
+        PlayerFileManager.initialize();
         TeamFileManager.initialize();
         PedastalManager.initialize();
         SmallTextTranslator.initialize();

@@ -1,5 +1,68 @@
-Killers:
-  r: 100
-  g: 200
-  b: 0
-  players: ["38bbb2fb-0ca0-448b-98c2-51ffb843a07e"]
+Brotherhood:
+  color:
+    r: 156
+    g: 0
+    b: 0
+  players:
+    - 6ff506a2-aa52-432c-82c4-aaadeeb9eed2
+    - 3bd1e9fc-64ec-4d51-9638-8d698cb7a935
+    - bc4a1aad-1653-4f45-99e2-efa67a64f806
+The_Fraternity:
+  color:
+    r: 214
+    g: 214
+    b: 214
+  players:
+    - 81cbe02c-58df-4316-953d-33a995e0d09e
+    - d773e8c6-5711-4593-8380-59b36b4986d7
+    - 999ed6b0-c601-4ff9-a0cb-f3d7fbf93651
+    - b7437a6c-5daa-435e-a2f1-5443093ce1ea
+    - cd9d7dd2-294c-4762-91dd-3f85fb5af741
+Team_Mesa:
+  color:
+    r: 255
+    g: 119
+    b: 0
+  players:
+    - a90761b0-6ed5-4ce7-aba8-9f82d3d922f7
+    - 1381384d-5d4f-4c72-969c-5c075992857e
+    - 2d4b6d65-87b5-435d-b134-f556e0ae0aea
+Team_SAD:
+  color:
+    r: 255
+    g: 33
+    b: 33
+  players:
+    - 9a294efd-d0f9-414b-a1bf-e3a41ce3178b
+    - 1c04f1e6-6ace-40b8-88bd-418a5acdbc69
+    - 631eb13c-dae2-475c-b6af-71e0d9543268
+Team_Friendship:
+  color:
+    r: 33
+    g: 244
+    b: 255
+  players:
+    - 06c76409-32d7-4208-be4c-2e849e6dc6b9
+    - 50b308e5-e3f1-4fc3-920b-824e86f0156a
+Batman_&_Robin:
+  color:
+    r: 42
+    g: 157
+    b: 161
+  players:
+    - 8d03c1f2-2d59-452e-ad17-a98cac5109ca
+    - 93ce2aa5-1cb8-4a4e-8d2d-628084578c0d
+Team_Unknown:
+  color:
+    r: 255
+    g: 255
+    b: 0
+  players:
+    - 726c83e8-c97c-46ad-b584-cfb4864d5826
+    - 5d05baf9-36f1-4360-a871-6fab2ad22efa
+No_Team:
+  color:
+    r: 0
+    g: 0
+    b: 0
+  players: []

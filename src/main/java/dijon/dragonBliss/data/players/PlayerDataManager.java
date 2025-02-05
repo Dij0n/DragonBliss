@@ -1,5 +1,6 @@
 package dijon.dragonBliss.data.players;
 
+import dijon.dragonBliss.data.teams.TeamManager;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;
@@ -11,6 +12,7 @@ public class PlayerDataManager {
 
     public static void addNewPlayer(UUID uuid){
         masterPlayerData.put(uuid, new PlayerData(uuid));
+        TeamManager.addPlayer(uuid, "No_Team");
     }
 
     public static void addReturningPlayer(PlayerData playerData){
